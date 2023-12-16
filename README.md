@@ -18,7 +18,7 @@ PDF Reader is a simple Python application that allows users to view PDF files an
 2. Change to the project directory:
 
     ```bash
-    cd pdf-reader
+    cd pdf-voice-reader
     ```
 
 3. Install the required dependencies:
@@ -32,7 +32,7 @@ PDF Reader is a simple Python application that allows users to view PDF files an
 1. Run the PDF reader script:
 
     ```bash
-    python pdf_reader.py
+    python pdfreader.py
     ```
 
 2. In the application window, use the "File" menu to open a PDF file.
