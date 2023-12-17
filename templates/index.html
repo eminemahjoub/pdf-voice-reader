@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Reader</title>
+</head>
+<body>
+    <h1>PDF Reader</h1>
+
+    <form action="/" method="post" enctype="multipart/form-data" id="uploadForm">
+        <label for="file">Upload PDF:</label>
+        <input type="file" name="file" accept=".pdf" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div id="contentContainer">
+        {% if content %}
+            <textarea id="textContent" readonly>{{ content }}</textarea>
+            <button onclick="readAloud()">Read Aloud</button>
+            <a href="/download" download>Download PDF</a>
+        {% endif %}
+    </div>
+
+    <script>
+        function readAloud() {
+            fetch("/read_aloud")
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                });
+        }
+    </script>
+</body>
+</html>
